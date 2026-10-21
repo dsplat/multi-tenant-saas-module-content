@@ -1,0 +1,31 @@
+{
+  "name": "dsplat/multi-tenant-saas-module-content",
+  "description": "内容中心 - 素材/话术/敏感词/质检规则与预警",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "MultiTenantSaas\\Modules\\Content\\": ""
+    }
+  },
+  "require": {
+    "php": "^8.3",
+    "dsplat/multi-tenant-saas": "^1.0 || ^2.0 || ^3.0",
+    "dsplat/multi-tenant-saas-base": "^3.4"
+  },
+  "extra": {
+    "saas": {
+      "name": "content",
+      "priority": 300,
+      "dependencies": [
+        "ai"
+      ],
+      "conflicts": [],
+      "requires_core": ">=1.0.0 <4.0.0",
+      "provider": "MultiTenantSaas\\Modules\\Content\\ContentServiceProvider",
+      "tenant_toggleable": true,
+      "module_loadable": true,
+      "default_tenant_enabled": true
+    }
+  }
+}
