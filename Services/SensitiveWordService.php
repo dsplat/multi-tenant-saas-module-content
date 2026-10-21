@@ -73,7 +73,9 @@ class SensitiveWordService
 
         $words = SensitiveWord::where('tenant_id', $tenantId)
             ->where('status', 'active')
-            ->get(['word', 'severity', 'is_regex']);
+            ->orderBy('word')
+            ->orderBy('sensitive_word_id')
+            ->get(['sensitive_word_id', 'word', 'severity', 'is_regex']);
 
         $hits = [];
 
