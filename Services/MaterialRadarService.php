@@ -158,7 +158,7 @@ class MaterialRadarService
                 'read_count' => $eventCounts['read'] ?? 0,
                 'share_count' => $eventCounts['shared'] ?? 0,
                 'unique_viewers' => $uniqueViewers,
-                'avg_read_duration' => round($avgDuration ?? 0, 1),
+                'avg_read_duration' => round((float) ($avgDuration ?? 0), 1),
             ],
             'daily_trend' => $dailyTrend,
             'recent_events' => $recentEvents,
@@ -242,7 +242,7 @@ class MaterialRadarService
             'total_views' => $stats['viewed']->count ?? 0,
             'total_reads' => $stats['read']->count ?? 0,
             'share_count' => $stats['shared']->count ?? 0,
-            'avg_duration' => round($stats['read']->avg_duration ?? 0, 1),
+            'avg_duration' => round((float) ($stats['read']->avg_duration ?? 0), 1),
         ];
     }
 
